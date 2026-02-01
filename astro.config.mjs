@@ -4,6 +4,7 @@ import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 
 import cloudflare from '@astrojs/cloudflare';
+import keystatic from '@keystatic/astro';
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,6 +27,7 @@ export default defineConfig({
               },
           ],
       }),
+      keystatic()
 	],
 
   output: 'server',

@@ -13,8 +13,10 @@
     "@astrojs/check": "^0.9.6",
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/starlight": "^0.37.5",
-    "astro": "^5.6.1",
-    "sharp": "^0.34.2",
+    "@keystatic/astro": "^5.0.6",
+    "@keystatic/core": "^0.5.48",
+    "astro": "^5.17.1",
+    "sharp": "^0.34.5",
     "starlight-blog": "^0.25.2",
     "typescript": "^5.9.3"
   },
