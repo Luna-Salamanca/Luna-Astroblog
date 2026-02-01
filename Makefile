@@ -7,7 +7,7 @@ build:
 	bunx --bun astro build
 
 preview:
-	bunx --bun astro preview
+	bunx wrangler pages dev ./dist
 
 check:
 	bunx --bun astro check
