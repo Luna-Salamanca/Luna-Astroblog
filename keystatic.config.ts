@@ -4,10 +4,8 @@ import { config, fields, collection } from '@keystatic/core';
 export default config({
   storage: {
     kind: 'github',
-    repo: {
-      owner: 'Luna-Salamanca',
-      name: 'Luna-Astroblog',
-    },
+    repo: {owner: 'Luna-Salamanca',name: 'Luna-Astroblog'},
+    branchPrefix: 'main/',
   },
   
   collections: {
@@ -38,14 +36,13 @@ export default config({
             itemLabel: props => props.value,
           }
         ),
-        content: fields.document({
+        content: fields.markdoc({
           label: 'Content',
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: {
-            directory: 'src/assets/images',
-            publicPath: '../../assets/images/',
+          options: {
+            image: {
+              directory: 'src/assets/images',
+              publicPath: '../../assets/images/',
+            },
           },
         }),
       },
@@ -73,14 +70,13 @@ export default config({
             description: 'Optional badge text',
           }),
         }),
-        content: fields.document({
+        content: fields.markdoc({
           label: 'Content',
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: {
-            directory: 'src/assets/images',
-            publicPath: '../../assets/images/',
+          options: {
+            image: {
+              directory: 'src/assets/images',
+              publicPath: '../../assets/images/',
+            },
           },
         }),
       },

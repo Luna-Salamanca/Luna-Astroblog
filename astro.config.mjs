@@ -2,33 +2,38 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
-
 import cloudflare from '@astrojs/cloudflare';
 import keystatic from '@keystatic/astro';
+import react from '@astrojs/react';
+
+import markdoc from '@astrojs/markdoc';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-      starlight({
-          plugins: [starlightBlog()],
-          title: 'My Docs',
-          social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-          sidebar: [
-              {
-                  label: 'Guides',
-                  items: [
-                      // Each item here is one entry in the navigation menu.
-                      { label: 'Example Guide', slug: 'guides/example' },
-                  ],
-              },
-              {
-                  label: 'Reference',
-                  autogenerate: { directory: 'reference' },
-              },
-          ],
-      }),
-      keystatic()
-	],
+  integrations: [starlight({
+    plugins: [starlightBlog()],
+    title: 'My Docs',
+    social: [
+      { icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }
+    ],
+    sidebar: [
+      {
+        label: 'Guides',
+        items: [
+          // Each item here is one entry in the navigation menu.
+          { label: 'Example Guide', slug: 'guides/example' },
+        ],
+      },
+      {
+        label: 'Reference',
+        autogenerate: { directory: 'reference' },
+      },
+    ],
+  }), 
+  react(), 
+  keystatic(), 
+  markdoc()
+  ],
 
   output: 'server',
   adapter: cloudflare({

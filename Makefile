@@ -15,3 +15,5 @@ check:
 install:
 	bun install
 
+clear:
+	bun pm cache rm
